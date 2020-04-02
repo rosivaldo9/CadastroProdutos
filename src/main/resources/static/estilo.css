@@ -1,0 +1,45 @@
+
+h1 {
+    margin-top: 50px;
+    padding-bottom: 50px;
+}
+
+.tema {
+    Background: #6A5ACD;
+}
+
+.margemLateral {
+    margin-left: 100px;
+}
+
+.buttonLateral {
+    width: 250px;
+}
+
+.corTexto {
+    color: white;
+}
+
+tr:nth-child(even) {
+    background-color: #87CEEB;
+}
+
+tr:nth-child(odd) {
+    background-color: #ADD8E6;
+}
+
+th {
+    font-size: 20px;
+    background-color: rgba(106, 90, 205, 0.8);
+    color: white;
+}
+
+td {
+    font-size: 15px;
+    font-family: Arial;
+}
+
+form {
+    font-size: 25px;
+    font-family: Arial;
+}

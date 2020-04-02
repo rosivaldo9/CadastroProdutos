@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout ="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Projetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <style>
+        h1 {margin-top: 50px;
+            padding-bottom: 50px;}
+        .tema { Background: #6A5ACD; }
+        .margemLateral {margin-left: 100px; }
+        .buttonLateral {  width: 250px;}
+        .corTexto { color: white;}
+
+        form { font-size: 25px;
+            font-family: Arial;}
+    </style>
+</head>
+<body>
+
+<h1 class="corTexto tema" align="center">Sistema de controle de produto</h1>
+
+<div class="row margemLateral">
+    <div class="col s2">
+        <h3>
+            <a href="/produtos" class="waves-effect waves-light btn tema buttonLateral">
+            <i class="material-icons left">add_circle_outline</i>Lista de Produtos</a>
+        </h3>
+        <h3>
+            <a href="/cadastrarProduto" class="waves-effect waves-light btn tema buttonLateral">
+            <i class="material-icons left">add_circle_outline</i>Cadastrar Produtos</a>
+        </h3>
+    </div>
+    <div class="col s10">
+        <form class="container" action="#" th:action="@{/salvarEdicaoProduto}" th:object="${produto}" method="post">
+            <div class="row">
+                <div class="input-field col s1">ID:<input type="number" value="" th:field="*{id}" id="id"></div>
+                <div class="input-field col s7">Nome:<input type="text" value="" th:field="*{nome}" id="nome"></div>
+                <div class="input-field col s2">Preço:<input type="number" value="" th:field="*{preco}" id="preco"></div>
+                <div class="input-field col s2">Código :<input type="number" value="" th:field="*{codigoProduto}" id="codigoProduto"></div>
+            </div>
+            <button class="waves-effect waves-light btn" type="submit">Salvar</button>
+        </form>
+    </div>
+</div>
+
+</body>
+</html>

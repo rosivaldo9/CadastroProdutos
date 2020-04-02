@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastro de Projetos</title>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+    <link rel="stylesheet" href="estilo.css">
+</head>
+<body>
+
+<h1 class="corTexto tema" align="center">Sistema de controle de produto</h1>
+
+<div class="row margemLateral">
+
+    <div class="col s2 lateral">
+        <h3 align="right"><a href="/produtos" class="waves-effect waves-light btn tema buttonLateral"><i
+                class="material-icons left">add_circle_outline</i>Lista de Produtos</a></h3>
+        <h3 align="right"><a href="/cadastrarProduto" class="waves-effect waves-light btn tema buttonLateral"><i
+                class="material-icons left">add_circle_outline</i>Cadastrar
+            Produtos</a></h3>
+    </div>
+    <div class="col s10">
+        <table class="container">
+            <tr class="">
+                <th>Nome</th>
+                <th>Preço</th>
+                <th>Código</th>
+                <th>Delete</th>
+                <th>Atualizar</th>
+            </tr>
+            <tbody>
+            <tr th:each="produto : ${produtos}">
+                <td><span th:text="${produto.nome}"></span></td>
+                <td><span th:text="${produto.preco}"></span></td>
+                <td><span th:text="${produto.codigoProduto}"></span></td>
+                <td><a th:href="@{/delete/{id}(id=${produto.id})}"><i
+                        class="material-icons center">delete_forever</i></a></td>
+                <td><a th:href="@{/editarProduto/{id}(id=${produto.id})}"><i class="material-icons center">mode_edit</i></a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+</body>
+</html>
